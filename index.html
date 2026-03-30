@@ -179,6 +179,11 @@
       color: #1f324b;
     }
 
+    li.top-skills {
+      list-style: none;
+      margin-left: -20px;
+    }
+
     .record-item {
       margin-bottom: 14px;
     }
@@ -201,6 +206,18 @@
 
     .edu-line {
       margin: 3px 0;
+    }
+
+    .edu-bullet {
+      position: relative;
+      padding-left: 14px;
+    }
+
+    .edu-bullet::before {
+      content: "\2022";
+      position: absolute;
+      left: 0;
+      color: #1f324b;
     }
 
     @media (max-width: 760px) {
@@ -362,7 +379,7 @@
             <li>Design and operationalize repeatable delivery playbooks (runbooks, automation, CI hardening) to stabilize production systems and reduce operational load.</li>
             <li>Built and maintained an internal wiki/confluence platform with authoritative runbooks, topology/service guides, operations procedures, and software-development knowledge hubs.</li>
             <li>Produced high-clarity system specification output for a proprietary distributed filesystem, including functional requirements, architecture, data model, protocol/security models, use cases, and test-plan mapping to accelerate implementation readiness.</li>
-            <li>Top skills: Linux, Automation, CI/CD, Docker, DevOps, Site Reliability Engineering, Technical Documentation, System Specification, Consulting</li>
+            <li class="top-skills">Top skills: Linux, Automation, CI/CD, Docker, DevOps, Site Reliability Engineering, Technical Documentation, System Specification, Consulting</li>
           </ul>
         </article>
 
@@ -373,7 +390,7 @@
             <li>Improved performance and reliability of Holodeck EDA cloud bursting by adding I/O-driven synchronization events to support scalable cloud workflows.</li>
             <li>Tuned storage and network I/O paths to meet EDA flow performance targets; performed low-level Linux/filesystem debugging across CI and customer environments.</li>
             <li>Partnered with applications engineering and QA to reproduce issues, accelerate resolution, and shorten deployment turnaround; added automated diagnostics and regression coverage.</li>
-            <li>Top skills: C++, Distributed Systems, File Systems, Linux, Storage, Networking, Performance Optimization, Debugging, Cloud Computing, Automation</li>
+            <li class="top-skills">Top skills: C++, Distributed Systems, File Systems, Linux, Storage, Networking, Performance Optimization, Debugging, Cloud Computing, Automation</li>
           </ul>
         </article>
 
@@ -381,7 +398,7 @@
           <h3>UC San Diego - OpenROAD (DARPA IDEA) - Consultant (part-time) | Remote (USA) | Mar 2019 - May 2022</h3>
           <ul>
             <li>Implemented and contributed to open-source physical design tooling (tapcell/welltap placement and row cutting, Tcl integration; validated on 16nm and 65nm designs): <a href="https://github.com/The-OpenROAD-Project/tapcell" target="_blank" rel="noopener noreferrer">github.com/The-OpenROAD-Project/tapcell</a></li>
-            <li>Top skills: C++, Tcl, Electronic Design Automation (EDA), Physical Design, Build Automation, GNU Make, Open Source Software, Collaboration</li>
+            <li class="top-skills">Top skills: C++, Tcl, Electronic Design Automation (EDA), Physical Design, Build Automation, GNU Make, Open Source Software, Collaboration</li>
           </ul>
         </article>
 
@@ -389,7 +406,7 @@
           <h3>Stealth prototype | Wilsonville, OR (Remote) | Mar 2020 - Feb 2021</h3>
           <ul>
             <li>Built a GPS position-aware video-analytics prototype, extracting forencis evidence and kinematics from CCTV dashcam, drone footage. <a href="https://github.com/dmitrymironov/SpaceHammer/" target="_blank" rel="noopener noreferrer">https://github.com/dmitrymironov/SpaceHammer</a>.</li>
-            <li>Top skills: C++, Python, Data Processing, Automation, Git, Software Prototyping, Garmin, GPS, Tapo, ZoneMinder</li>
+            <li class="top-skills">Top skills: C++, Python, Data Processing, Automation, Git, Software Prototyping, Garmin, GPS, Tapo, ZoneMinder</li>
           </ul>
         </article>
 
@@ -400,7 +417,7 @@
             <li>Maintained and extended AMS/Nexys/FTDI/VIP modules; created new agents (ARM demo) and improved embedded performance by rewriting critical paths in C.</li>
             <li>Designed and implemented a Rendezvous server supporting ARM demo workflows; provided peripheral support for MindSphere and Mbed Cloud.</li>
             <li>Integrated cloud IoT onboarding (AWS IoT, Azure IoT) into demo/provisioning workflows and optimized ARM mbed client integration for embedded agents.</li>
-            <li>Top skills: C++, Embedded Systems, ARM, Internet of Things (IoT), Amazon Web Services (AWS), Microsoft Azure, Linux, Networking, Automation</li>
+            <li class="top-skills">Top skills: C++, Embedded Systems, ARM, Internet of Things (IoT), Amazon Web Services (AWS), Microsoft Azure, Linux, Networking, Automation</li>
           </ul>
         </article>
 
@@ -411,7 +428,7 @@
             <li>Built secure provisioning and device-authentication protocols across x86/ARM agents, JTAG-based exchange with secure IP, and a REST API backend; converted specs into UML sequence diagrams for implementation traceability.</li>
             <li>Drove system bring-up and debug on FPGA prototypes and silicon using C/C++ and Tcl: JTAG/TAP automation, UART/SPI validation, and Questa DPI simulations for hardware-software verification.</li>
             <li>Built FPGA/JTAG debug tooling and in-house CAD utilities in C++/Tcl to accelerate bring-up and validation.</li>
-            <li>Top skills: Physical Design, ASIC, Cadence Innovus, Calibre, Static Timing Analysis, FPGA, JTAG, C++, Tcl, Cryptography</li>
+            <li class="top-skills">Top skills: Physical Design, ASIC, Cadence Innovus, Calibre, Static Timing Analysis, FPGA, JTAG, C++, Tcl, Cryptography</li>
           </ul>
         </article>
 
@@ -421,7 +438,7 @@
             <li>Established and led Russian R&amp;D for automated standard-cell library generation/validation, scaling the team to 30+ engineers by 2011.</li>
             <li>Built Xvalid standard-cell library semantic validation suite and parsing pipeline (C++/Lex/Yacc/Boost.Polygon, SWIG/Tcl) to cross-check Liberty/LEF/GDSII/Verilog/SPICE views and enforce pin/area/geometry consistency; validated libraries with Cadence and ICC2 flows.</li>
             <li>Supported customer-facing library delivery and acceptance, balancing engineering execution with partner coordination.</li>
-            <li>Top skills: Standard Cell Libraries, Electronic Design Automation (EDA), VLSI, ASIC, C++, Tcl, Lex/Yacc, Regression Testing, Computational Geometry</li>
+            <li class="top-skills">Top skills: Standard Cell Libraries, Electronic Design Automation (EDA), VLSI, ASIC, C++, Tcl, Lex/Yacc, Regression Testing, Computational Geometry</li>
           </ul>
         </article>
       </section>
@@ -462,14 +479,14 @@
 
       <section class="section">
         <h2>Education</h2>
-        <p class="education">Moscow Institute of Electronic Technology (MIET)</p>
+        <p class="education edu-bullet">Moscow Institute of Electronic Technology (MIET)</p>
         <p class="edu-line">Engineer Diploma (U.S. Equivalent: Master of Science in Computer Science and Electrical Engineering)</p>
         <p class="edu-line">1992 - 1997</p>
         <p class="edu-line">Verification Authority: Foundation for International Services, Inc. (FIS)</p>
         <p class="edu-line">Evaluation Report ID: 81933/WEJ | Verified on May 3, 1999</p>
         <p class="edu-line">Focus: Semiconductor physics, IC CAD algorithms and methods</p>
         <p class="edu-line">Diploma Thesis: Optimizing standard-cell layouts using ECO change-order techniques, including cell orientations, structural pin alignment, and force-directed improvements, followed by optimal placement legalization.</p>
-        <p class="edu-line">Immediately after graduation, entered a Ph.D. program in transistor device engineering at the Lukin Scientific Research Institute of Physical Problems (NIIFP), Zelenograd; the program was not completed after receiving an offer from a foreign company and relocating abroad to pursue an engineering career in Silicon Valley.</p>
+        <p class="edu-line edu-bullet">Immediately after graduation, entered a Ph.D. program in transistor device engineering at the Lukin Scientific Research Institute of Physical Problems (NIIFP), Zelenograd; the program was not completed after receiving an offer from a foreign company and relocating abroad to pursue an engineering career in Silicon Valley.</p>
       </section>
 
       <section class="section">
