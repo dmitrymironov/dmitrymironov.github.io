@@ -1,0 +1,417 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Dmitry Mironov - Resume (EDA/C++)</title>
+  <style>
+    :root {
+      --surface: #ffffff;
+      --surface-border: #d6dfeb;
+      --text: #102036;
+      --muted: #4b607c;
+      --heading: #071827;
+      --accent: #0f5da5;
+      --accent-strong: #0a3f78;
+      --accent-soft: #e7f0fa;
+      --shadow: 0 10px 30px rgba(10, 26, 46, 0.08);
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: "Source Sans 3", "IBM Plex Sans", "Segoe UI", "Helvetica Neue", Helvetica, Arial, sans-serif;
+      color: var(--text);
+      background:
+        radial-gradient(circle at 7% 6%, #ffffff 0%, rgba(255, 255, 255, 0) 26%),
+        radial-gradient(circle at 92% 12%, #f0f7ff 0%, rgba(240, 247, 255, 0) 24%),
+        linear-gradient(165deg, #edf2f8 0%, #f8fbff 42%, #edf3fa 100%);
+      line-height: 1.58;
+      letter-spacing: 0.01em;
+    }
+
+    a {
+      color: var(--accent);
+      text-decoration: none;
+      border-bottom: 1px solid transparent;
+      transition: border-color 0.2s ease;
+    }
+
+    a:hover {
+      border-color: var(--accent);
+    }
+
+    .page {
+      max-width: 1120px;
+      margin: 46px auto;
+      padding: 0 20px 36px;
+    }
+
+    .hero {
+      position: relative;
+      overflow: hidden;
+      background: linear-gradient(130deg, #0d233b, #11406b 54%, #0a6db2);
+      color: #ffffff;
+      border: 1px solid rgba(255, 255, 255, 0.14);
+      border-radius: 16px;
+      padding: 34px 34px 30px;
+      box-shadow: var(--shadow);
+      margin-bottom: 24px;
+    }
+
+    .hero::after {
+      content: "";
+      position: absolute;
+      right: -80px;
+      top: -74px;
+      width: 240px;
+      height: 240px;
+      background: radial-gradient(circle, rgba(255, 255, 255, 0.27), rgba(255, 255, 255, 0));
+      pointer-events: none;
+    }
+
+    .name {
+      margin: 0 0 6px;
+      font-size: clamp(2rem, 3vw, 2.55rem);
+      line-height: 1.15;
+      letter-spacing: 0.02em;
+      position: relative;
+      z-index: 1;
+    }
+
+    .headline {
+      margin: 0;
+      color: #dcecff;
+      font-size: 1rem;
+      font-weight: 600;
+      position: relative;
+      z-index: 1;
+    }
+
+    .contact-row {
+      margin-top: 16px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px 16px;
+      font-size: 0.97rem;
+      position: relative;
+      z-index: 1;
+    }
+
+    .contact-chip {
+      background: rgba(255, 255, 255, 0.12);
+      border: 1px solid rgba(255, 255, 255, 0.22);
+      border-radius: 999px;
+      padding: 7px 12px;
+      color: #ebf4ff;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .contact-chip .label {
+      font-weight: 600;
+      color: #f3f8ff;
+    }
+
+    .contact-icon {
+      width: 16px;
+      height: 16px;
+      fill: currentColor;
+      opacity: 0.96;
+      flex: 0 0 auto;
+    }
+
+    .hero a {
+      color: #ffffff;
+      border-color: rgba(255, 255, 255, 0.35);
+    }
+
+    .section {
+      background: var(--surface);
+      border: 1px solid var(--surface-border);
+      border-radius: 14px;
+      box-shadow: var(--shadow);
+      padding: 22px 24px 20px;
+      margin-bottom: 18px;
+    }
+
+    .section h2 {
+      margin: 0 0 16px;
+      color: var(--heading);
+      font-size: 1.15rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      border-bottom: 2px solid var(--accent-soft);
+      padding-bottom: 10px;
+    }
+
+    .job {
+      padding: 16px 0 14px;
+      border-top: 1px solid #e6ebf2;
+    }
+
+    .job:first-of-type {
+      padding-top: 0;
+      border-top: 0;
+    }
+
+    .job h3 {
+      margin: 0 0 10px;
+      color: var(--heading);
+      font-size: 1.04rem;
+      line-height: 1.4;
+      font-weight: 700;
+      border-left: 4px solid var(--accent-soft);
+      padding-left: 10px;
+    }
+
+    ul {
+      margin: 8px 0 0;
+      padding-left: 20px;
+    }
+
+    li {
+      margin-bottom: 7px;
+      color: #1f324b;
+    }
+
+    .record-item {
+      margin-bottom: 14px;
+    }
+
+    .record-line {
+      display: block;
+    }
+
+    .summary {
+      margin: 0;
+      color: #213651;
+      font-size: 1.02rem;
+    }
+
+    .education {
+      margin: 0;
+      font-weight: 500;
+    }
+
+    @media (max-width: 760px) {
+      .page {
+        margin: 20px auto;
+        padding: 0 12px 18px;
+      }
+
+      .hero {
+        padding: 24px 18px 20px;
+      }
+
+      .section {
+        padding: 18px 16px;
+      }
+
+      .contact-row {
+        gap: 8px;
+      }
+
+      .contact-chip {
+        width: 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <header class="hero">
+      <h1 class="name">Dmitry Mironov</h1>
+      <p class="headline">Principal C++ / EDA Engineer</p>
+      <div class="contact-row">
+        <span class="contact-chip">Eugene, OR</span>
+        <span class="contact-chip">
+          <svg class="contact-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M4.98 3.5A2.5 2.5 0 1 0 5 8.5a2.5 2.5 0 0 0-.02-5zm.02 6.75H2.5V21h5V10.25zM9.5 10.25V21h4.75v-5.58c0-1.47.27-2.89 2.1-2.89 1.8 0 1.82 1.69 1.82 2.98V21H23v-6.39c0-3.14-.68-5.56-4.35-5.56-1.76 0-2.94.97-3.43 1.89h-.05v-1.69H9.5z"/></svg>
+          <span class="label">LinkedIn</span>
+          <a href="https://www.linkedin.com/in/dmitrymironov1/" target="_blank" rel="noopener noreferrer">linkedin.com/in/dmitrymironov1</a>
+        </span>
+        <span class="contact-chip">
+          <svg class="contact-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 .5a12 12 0 0 0-3.79 23.39c.6.12.82-.26.82-.58v-2.17c-3.33.73-4.03-1.4-4.03-1.4a3.18 3.18 0 0 0-1.34-1.75c-1.1-.76.08-.74.08-.74a2.53 2.53 0 0 1 1.85 1.25 2.56 2.56 0 0 0 3.49 1 2.56 2.56 0 0 1 .76-1.6c-2.66-.3-5.46-1.34-5.46-5.94a4.66 4.66 0 0 1 1.25-3.23 4.3 4.3 0 0 1 .12-3.19s1.02-.33 3.34 1.23a11.7 11.7 0 0 1 6.08 0c2.32-1.56 3.34-1.23 3.34-1.23.45 1.02.5 2.18.13 3.23a4.65 4.65 0 0 1 1.24 3.23c0 4.61-2.8 5.63-5.48 5.93a2.86 2.86 0 0 1 .81 2.21v3.28c0 .32.21.7.83.58A12 12 0 0 0 12 .5z"/></svg>
+          <span class="label">GitHub</span>
+          <a href="https://github.com/dmitrymironov" target="_blank" rel="noopener noreferrer">github.com/dmitrymironov</a>
+        </span>
+      </div>
+    </header>
+
+    <main>
+      <section class="section">
+        <h2>Summary</h2>
+        <p class="summary">
+          Principal CAD/EDA engineer with 25+ years building physical-design algorithms, RTL-to-GDSII flows,
+          and design-data tooling across commercial and open-source stacks, including tapeout/signoff
+          (Innovus/ICC2 and Calibre DRC/LVS). Strong Linux systems background (performance, debugging,
+          CI reliability) with a track record of delivering customer-facing fixes and stable releases.
+        </p>
+      </section>
+
+      <section class="section">
+        <h2>Skills</h2>
+        <ul>
+          <li>EDA / Physical design: placement, legalization, congestion estimation, netlist processing, standard-cell libraries, LEF, DEF, Liberty, GDSII, Verilog, SPICE, RTL-to-GDSII flows</li>
+          <li>Signoff/tapeout: Cadence Innovus, Synopsys IC Compiler II (ICC2), Calibre (DRC/LVS), Static Timing Analysis (STA), SDF, SDC, Synopsys Design Compiler, Synopsys PrimeTime</li>
+          <li>Languages: C++, C, Tcl, Python</li>
+          <li>Systems: Linux, multithreading, performance profiling, debugging, POSIX/FUSE, distributed systems, storage/network I/O tuning</li>
+          <li>DevOps architecture and automation: Jenkins, Conan, Ansible, Terraform, Docker/Docker Compose, Make-based operational runbooks, CI/CD hardening</li>
+          <li>Cloud and edge platforms: hyperscalers and tier-2 regional CSPs (AWS, Azure, Cloudflare, and other regional providers).</li>
+          <li>Security engineering: HashiCorp Vault operations, PKI/TLS certificate lifecycle management, secret bootstrapping/rotation, infrastructure trust chains</li>
+          <li>IoT and secure embedded systems: device provisioning, cryptographic protocols, firmware/update workflows, JTAG-based validation and diagnostics</li>
+          <li>Tooling: Git, GCC, Make/CMake, Valgrind, Qt</li>
+        </ul>
+      </section>
+
+      <section class="section">
+        <h2>Experience</h2>
+
+        <article class="job">
+          <h3>Affinity Techworks LLC - Principal Engineer / Owner (Infrastructure, DevOps, and Applied AI) | Eugene, OR (Remote) | Sep 2025 - Present</h3>
+          <ul>
+            <li>Own infrastructure reliability and automation engagements for engineering teams, including AI-assisted workflows with operational guardrails.</li>
+            <li>Design and operationalize repeatable delivery playbooks (runbooks, automation, CI hardening) to stabilize production systems and reduce operational load.</li>
+            <li>Built and maintained an internal wiki/confluence platform with authoritative runbooks, topology/service guides, operations procedures, and software-development knowledge hubs.</li>
+            <li>Produced high-clarity system specification output for a proprietary distributed filesystem, including functional requirements, architecture, data model, protocol/security models, use cases, and test-plan mapping to accelerate implementation readiness.</li>
+            <li>Top skills: Linux, Automation, CI/CD, Docker, DevOps, Site Reliability Engineering, Technical Documentation, System Specification, Consulting</li>
+          </ul>
+        </article>
+
+        <article class="job">
+          <h3>IC Manage - Senior Software Engineer | Remote (USA) | Mar 2021 - Aug 2025</h3>
+          <ul>
+            <li>Developed and optimized a high-performance C++ distributed filesystem platform for cloud-based and on-prem EDA workloads (Holodeck).</li>
+            <li>Improved performance and reliability of Holodeck EDA cloud bursting by adding I/O-driven synchronization events to support scalable cloud workflows.</li>
+            <li>Tuned storage and network I/O paths to meet EDA flow performance targets; performed low-level Linux/filesystem debugging across CI and customer environments.</li>
+            <li>Partnered with applications engineering and QA to reproduce issues, accelerate resolution, and shorten deployment turnaround; added automated diagnostics and regression coverage.</li>
+            <li>Top skills: C++, Distributed Systems, File Systems, Linux, Storage, Networking, Performance Optimization, Debugging, Cloud Computing, Automation</li>
+          </ul>
+        </article>
+
+        <article class="job">
+          <h3>UC San Diego - OpenROAD (DARPA IDEA) - Consultant (part-time) | Remote (USA) | Mar 2019 - May 2022</h3>
+          <ul>
+            <li>Implemented and contributed to open-source physical design tooling (tapcell/welltap placement and row cutting, Tcl integration; validated on 16nm and 65nm designs): <a href="https://github.com/The-OpenROAD-Project/tapcell" target="_blank" rel="noopener noreferrer">github.com/The-OpenROAD-Project/tapcell</a></li>
+            <li>Top skills: C++, Tcl, Electronic Design Automation (EDA), Physical Design, Build Automation, GNU Make, Open Source Software, Collaboration</li>
+          </ul>
+        </article>
+
+        <article class="job">
+          <h3>Stealth prototype | Wilsonville, OR (Remote) | Mar 2020 - Feb 2021</h3>
+          <ul>
+            <li>Built a GPS position-aware video-analytics prototype, extracting forencis evidence and kinematics from CCTV dashcam, drone footage. <a href="https://github.com/dmitrymironov/SpaceHammer/" target="_blank" rel="noopener noreferrer">https://github.com/dmitrymironov/SpaceHammer</a>.</li>
+            <li>Top skills: C++, Python, Data Processing, Automation, Git, Software Prototyping, Garmin, GPS, Tapo, ZoneMinder</li>
+          </ul>
+        </article>
+
+        <article class="job">
+          <h3>Siemens EDA (Mentor Graphics) - Independent Contractor (ICSA Attachments A-C) | Wilsonville, OR / Fremont, CA | Jun 2018 - Mar 2020</h3>
+          <ul>
+            <li>Delivered infrastructure, agent, and server improvements: build/release automation, regression environment work, and rollout of bug tracking.</li>
+            <li>Maintained and extended AMS/Nexys/FTDI/VIP modules; created new agents (ARM demo) and improved embedded performance by rewriting critical paths in C.</li>
+            <li>Designed and implemented a Rendezvous server supporting ARM demo workflows; provided peripheral support for MindSphere and Mbed Cloud.</li>
+            <li>Integrated cloud IoT onboarding (AWS IoT, Azure IoT) into demo/provisioning workflows and optimized ARM mbed client integration for embedded agents.</li>
+            <li>Top skills: C++, Embedded Systems, ARM, Internet of Things (IoT), Amazon Web Services (AWS), Microsoft Azure, Linux, Networking, Automation</li>
+          </ul>
+        </article>
+
+        <article class="job">
+          <h3>Siemens EDA (Mentor Graphics) - Design for Security (System Level Engineering) - Contractor | Wilsonville, OR | Dec 2011 - Sep 2012</h3>
+          <ul>
+            <li>Delivered end-to-end physical implementation and tapeout for a security testchip SoC (Pulpino RISC-V MCU + PUF + custom security IP), including power grid/filler integration, hard-IP GDS "ghost" blocks, P&amp;R (Innovus/ICC2), STA/SDF, and Calibre DRC/LVS; supported TSMC MPW packaging resulting in functional silicon.</li>
+            <li>Built secure provisioning and device-authentication protocols across x86/ARM agents, JTAG-based exchange with secure IP, and a REST API backend; converted specs into UML sequence diagrams for implementation traceability.</li>
+            <li>Drove system bring-up and debug on FPGA prototypes and silicon using C/C++ and Tcl: JTAG/TAP automation, UART/SPI validation, and Questa DPI simulations for hardware-software verification.</li>
+            <li>Built FPGA/JTAG debug tooling and in-house CAD utilities in C++/Tcl to accelerate bring-up and validation.</li>
+            <li>Top skills: Physical Design, ASIC, Cadence Innovus, Calibre, Static Timing Analysis, FPGA, JTAG, C++, Tcl, Cryptography</li>
+          </ul>
+        </article>
+
+        <article class="job">
+          <h3>Nangate A/S - Head of Representative Office | Moscow, Russia | Dec 2005 - Nov 2011</h3>
+          <ul>
+            <li>Established and led Russian R&amp;D for automated standard-cell library generation/validation, scaling the team to 30+ engineers by 2011.</li>
+            <li>Built Xvalid standard-cell library semantic validation suite and parsing pipeline (C++/Lex/Yacc/Boost.Polygon, SWIG/Tcl) to cross-check Liberty/LEF/GDSII/Verilog/SPICE views and enforce pin/area/geometry consistency; validated libraries with Cadence and ICC2 flows.</li>
+            <li>Supported customer-facing library delivery and acceptance, balancing engineering execution with partner coordination.</li>
+            <li>Top skills: Standard Cell Libraries, Electronic Design Automation (EDA), VLSI, ASIC, C++, Tcl, Lex/Yacc, Regression Testing, Computational Geometry</li>
+          </ul>
+        </article>
+      </section>
+
+      <section class="section">
+        <h2>Selected Consulting Engagements</h2>
+        <ul>
+          <li>Supported 30+ client and partner organizations across consulting, EDA, infrastructure, and product-development work.</li>
+          <li>Runtime Design Automation (RTDA) / Runtime Inc. (2013-2015): built FlowTracer grid-based design-space-exploration pipelines; composed distributed EDA flows and extracted QoR metrics from tool logs (WNS/TNS, congestion, routing, power, HPWL).</li>
+          <li>Nangate (Sep-Oct 2015): fixed library acceptance-test failures in Xvalid (GDS ingestion, geometry/text-label and pin checks).</li>
+          <li>Kerrisdale Capital (Mar 2016): authored biometric fingerprint sensor research and forward-looking market analysis.</li>
+          <li>Silvaco (Oct 2017): stabilized and benchmarked Fabrix flows (build/config management, reference P&amp;R runs, 3-layer support, partitioned modes).</li>
+        </ul>
+      </section>
+
+      <section class="section">
+        <h2>Earlier Experience (Select)</h2>
+        <ul>
+          <li>Synopsys / Gambit Automated Design (1993-1999): Joined a P&amp;R startup as an intern while pursuing an Engineer Diploma (M.S.-equivalent) in semiconductor CAD engineering at MIET (completed in 1997), combining education and professional engineering work; grew into a Principal Engineer role contributing high-performance CAD C++ code and architecture across placement, floorplanning, legalization, CTS/ECO, and timing-driven optimization, with team execution contributing to the company’s acquisition by Synopsys.</li>
+          <li>Arcadia Design Systems (1999-2000): Delivered major Mustang datapath placer improvements, including macro pin-to-bus alignment techniques that significantly reduced routing violations/shorts and improved overall placement quality.</li>
+          <li>Tera Systems (2000-2001): built datapath block placement for rapid virtual prototyping (RTL-to-gates with Design Compiler, STA with PrimeTime, SDC timing budgets, fast routing approximation and 2D optimization) and Visual C++/MFC GUI.</li>
+          <li>AmmoCore Technology (2001-2003): refactored and optimized Fabrix detailed placement for a distributed HPC/grid P&amp;R system; improved performance and code safety.</li>
+          <li>Silicon Valley Research (Silvaco) (2003): CAD/EDA algorithms and UI; cross-platform C/C++ porting (Sun/HP-UX).</li>
+          <li>Charles Schwab (CyberTrader platform) (2003-2005): software QA project management in finance (via Allied Testing), including test strategy, documentation, and transaction-validation workflows with dev/ops coordination.</li>
+          <li>AMCAD Engineering (2013-2014): served as General Director, GR, commercial, Space Cluster Administration , RF/microwave engineering programs, satellite communications initiatives.</li>
+          <li>Archon Design Solutions - Contractor (C++/Tcl) | San Jose, CA (Remote) | Dec 2011 - Nov 2017: modernized and stabilized Fabrix RTL-to-GDSII flows (portability, profiling, concurrency, build/regression reliability, and format/toolchain upgrades).</li>
+        </ul>
+      </section>
+
+      <section class="section">
+        <h2>OpenSource Projects</h2>
+        <ul>
+          <li><strong>usbpark</strong>: Open-sourced parking-assist firmware, UI and PCB design package for long-term maintainability of deployed systems; <a href="https://github.com/dmitrymironov/usbpark" target="_blank" rel="noopener noreferrer">github.com/dmitrymironov/usbpark-code</a>.</li>
+          <li><strong>tapcell</strong>: Contributed tapcell/welltap placement and row-cutting functionality in OpenROAD physical design flow; <a href="https://github.com/The-OpenROAD-Project/tapcell" target="_blank" rel="noopener noreferrer">github.com/The-OpenROAD-Project/tapcell</a>.</li>
+          <li><strong>rigol2ltspice</strong>: Utility to convert Rigol waveform captures into LTspice-compatible input data for simulation workflows; <a href="https://github.com/dmitrymironov/rigol2ltspice" target="_blank" rel="noopener noreferrer">github.com/dmitrymironov/rigol2ltspice</a>.</li>
+        </ul>
+      </section>
+
+      <section class="section">
+        <h2>Education</h2>
+        <ul>
+          <li><strong>Moscow Institute of Electronic Technology (MIET)</strong></li>
+          <li>Engineer Diploma (U.S. Equivalent: Master of Science in Computer Science and Electrical Engineering)</li>
+          <li>1992 - 1997</li>
+          <li>Verification Authority: Foundation for International Services, Inc. (FIS)</li>
+          <li>Evaluation Report ID: 81933/WEJ | Verified on May 3, 1999</li>
+          <li>Focus: Semiconductor physics, IC CAD algorithms and methods</li>
+          <li>Diploma Thesis: Optimizing standard-cell layouts using ECO change-order techniques, including cell orientations, structural pin alignment, and force-directed improvements, followed by optimal placement legalization.</li>
+          <li>Immediately after graduation, entered a Ph.D. program in transistor device engineering at the Lukin Scientific Research Institute of Physical Problems (NIIFP), Zelenograd; the program was not completed after receiving an offer from a foreign company and relocating abroad to pursue an engineering career in Silicon Valley.</li>
+        </ul>
+      </section>
+
+      <section class="section">
+        <h2>Certifications</h2>
+        <ul>
+          <li class="record-item">
+            <span class="record-line"><strong>Deep Learning Specialization (Coursera)</strong></span>
+            <span class="record-line">Issued: Dec 2020 | Credential ID: <a href="https://www.coursera.org/account/accomplishments/specialization/LZRWTYZ7BZJ2" target="_blank" rel="noopener noreferrer">LZRWTYZ7BZJ2</a></span>
+          </li>
+          <li class="record-item">
+            <span class="record-line"><strong>AWS Fundamentals Specialization (Coursera)</strong></span>
+            <span class="record-line">Issued: Oct 2020 | Credential ID: <a href="https://www.coursera.org/account/accomplishments/specialization/KRJEDDPY6LS2" target="_blank" rel="noopener noreferrer">KRJEDDPY6LS2</a></span>
+          </li>
+          <li class="record-item">
+            <span class="record-line"><strong>Machine Learning in Production (DeepLearning.AI)</strong></span>
+            <span class="record-line">Issued: Sep 2025 | Credential ID: <a href="https://www.coursera.org/verify/R1I1SAPQQCNV" target="_blank" rel="noopener noreferrer">R1I1SAPQQCNV</a></span>
+          </li>
+          <li class="record-item">
+            <span class="record-line"><strong>Machine Learning (Coursera)</strong></span>
+            <span class="record-line">Issued: Oct 2020 | Credential ID: <a href="https://www.coursera.org/verify/89YZ8K8MNHVC" target="_blank" rel="noopener noreferrer">89YZ8K8MNHVC</a></span>
+          </li>
+        </ul>
+      </section>
+    </main>
+  </div>
+</body>
+</html>
