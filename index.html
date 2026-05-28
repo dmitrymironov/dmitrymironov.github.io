@@ -184,6 +184,42 @@
       margin-left: -20px;
     }
 
+    .visual-item {
+      list-style: none;
+      margin: 12px 0 2px -20px;
+    }
+
+    .resume-visual {
+      margin: 0;
+      max-width: 360px;
+    }
+
+    .resume-visual a {
+      display: block;
+      border: 1px solid var(--surface-border);
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 8px 22px rgba(10, 26, 46, 0.12);
+      background: #ffffff;
+    }
+
+    .resume-visual a:hover {
+      border-color: var(--accent);
+    }
+
+    .resume-visual img {
+      display: block;
+      width: 100%;
+      height: auto;
+    }
+
+    .resume-visual figcaption {
+      margin-top: 6px;
+      color: var(--muted);
+      font-size: 0.9rem;
+      line-height: 1.35;
+    }
+
     .record-item {
       margin-bottom: 14px;
     }
@@ -465,6 +501,14 @@
           <li>Charles Schwab (CyberTrader platform) (2003-2005): software QA project management in finance (via Allied Testing), including test strategy, documentation, and transaction-validation workflows with dev/ops coordination.</li>
           <li>AMCAD Engineering (2013-2014): served as General Director, representing the company to the Space Cluster Administration and leading government relations and commercial operations; defined a small-scale PCB fab pilot stack (Mega-UK/FTX, Bungard, Limata LDI, AccurateCNC, Fisnar, Dynamask/Laminar) alongside RF/microwave and satellite-communications initiatives.</li>
           <li>Archon Design Solutions - Contractor (C++/Tcl) | San Jose, CA (Remote) | Dec 2011 - Nov 2017: modernized and stabilized Fabrix RTL-to-GDSII flows (portability, profiling, concurrency, build/regression reliability, and format/toolchain upgrades), including X-FAB XT018 / xt018 library support and LEF/DEF/Liberty/GDS/CDL/Verilog collateral migration.</li>
+          <li class="visual-item">
+            <figure class="resume-visual">
+              <a href="assets/images/fabrix-2026.png" target="_blank" rel="noopener noreferrer" aria-label="Open full-size Fabrix screenshot">
+                <img src="assets/images/fabrix-2026.png" alt="Fabrix RTL-to-GDSII flow screenshot" loading="lazy">
+              </a>
+              <figcaption>Fabrix RTL-to-GDSII flow screenshot. Click to open full size.</figcaption>
+            </figure>
+          </li>
         </ul>
       </section>
 
